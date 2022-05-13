@@ -68,6 +68,8 @@ public class Convertisseur{
                 it.next();
             }
 
+            colmax++;
+            
             // On cree et rempli le tableau
             char[][] carte = new char[lig][colmax];
             //System.out.println("lig = "+lig+"\ncol = "+col);
