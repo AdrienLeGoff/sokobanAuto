@@ -113,20 +113,20 @@ public class Convertisseur{
             PrintWriter writerPddl = new PrintWriter(filePddl);
 
             // Passage de la carte au format pddl
-            writeHeader(lig,col,writerPddl);
+            writeHeader(lig,colmax,writerPddl);
 
             for(int i = 0;i<lig;i++){
-                for(int j=0;j<col;j++){
+                for(int j=0;j<colmax;j++){
                     convert(i,j,carte[i][j],writerPddl);
                     if(carte[i][j] != '#' && carte[i][j] != 'X'){
-                        voisin(carte,i,j,lig,col,writerPddl);
+                        voisin(carte,i,j,lig,colmax,writerPddl);
                     }
                 }
             }
-            initColonne(lig,col,writerPddl);
+            initColonne(lig,colmax,writerPddl);
             writerPddl.println("\t)\n\t(:goal (and");
             for(int i = 0;i<lig;i++){
-                for(int j=0;j<col;j++){
+                for(int j=0;j<colmax;j++){
                     if(carte[i][j] == '.'|| carte[i][j] == '+' || carte[i][j] == '*'){
                         writerPddl.println("\t\t(at C v"+i+" h"+j+")");
                     }
