@@ -67,9 +67,7 @@ public class Convertisseur{
                 }
                 it.next();
             }
-
             colmax++;
-            
             // On cree et rempli le tableau
             char[][] carte = new char[lig][colmax];
             //System.out.println("lig = "+lig+"\ncol = "+col);
@@ -103,6 +101,7 @@ public class Convertisseur{
 
             lig++;
             col++;
+            
             //System.out.println("Lig = "+lig);
             //System.out.println("Col = "+col);
 
@@ -279,10 +278,10 @@ public class Convertisseur{
                         v0 = Integer.parseInt(s.substring(iv0+2,iv0+3));
                         v1 = Integer.parseInt(s.substring(iv1+2,iv1+3));
                         //System.out.println("v0, v1 :"+v0+", "+v1);
-                        if(v0>v1){
+                        if(v0<v1){
                             //System.out.println("D");
                             res+="D";
-                        }else if(v0<v1){
+                        }else if(v0>v1){
                             //System.out.println("U");
                             res+="U";
                         }
@@ -292,9 +291,9 @@ public class Convertisseur{
                         h0 = Integer.parseInt(s.substring(ih0+2,ih0+3));
                         h1 = Integer.parseInt(s.substring(ih1+2,ih1+3));
                         //System.out.println("h0, h1 :"+h0+", "+h1);
-                        if(h0<h1){
+                        if(h0>h1){
                             res+="L";
-                        }else if(h0>h1){
+                        }else if(h0<h1){
                             res+="R";
                         }
                     }
